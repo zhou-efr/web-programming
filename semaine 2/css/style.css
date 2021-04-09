@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.logo
+{
+    position: sticky;
+    top: 0px;
+    width: 100px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.75rem yellow);
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+p {
+    color: lightgrey;
+    text-align: justify;
+}
