@@ -34,6 +34,7 @@ body {
 }
 
 p {
+    text-indent: 20px;
     color: lightgrey;
     text-align: justify;
     font-family: Open Sans;
