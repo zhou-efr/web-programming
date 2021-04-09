@@ -2,8 +2,16 @@ header {
     position: sticky;
     top: 10px;
     display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+    display : flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content : center;
 }
 
 .logo
@@ -26,4 +34,43 @@ body {
 p {
     color: lightgrey;
     text-align: justify;
+    font-family: Open Sans;
+}
+
+select {
+}
+
+label {
+    color : white;
+    margin-left: 10px;
+    font-family: Open Sans; 
+}
+
+.buttons {
+    display : flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+button {
+    margin: 10px;
+}
+
+.formbutton {
+    margin-top: 15px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px white;
+    padding : 10px;
+    background-color: black;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+    position: sticky;
+    top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 10px;
+    }
 }
