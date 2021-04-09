@@ -3,6 +3,7 @@ header {
     top: 10px;
     display: flex;
     flex-flow: column;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -11,6 +12,7 @@ form {
     margin-top: 10px;
     display : flex;
     flex-flow: row;
+    flex-wrap: wrap;
     justify-content : center;
 }
 
@@ -37,23 +39,40 @@ p {
     font-family: Open Sans;
 }
 
-select {
-}
-
 label {
     color : white;
     margin-left: 10px;
-    font-family: Open Sans; 
+    font-family: Open Sans;
 }
 
 .buttons {
     display : flex;
     flex-flow: row;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+select {
+    background-color: lightgrey;
+    border: none;
+    padding: 2px;
 }
 
 button {
     margin: 10px;
+    text-transform: uppercase;
+    border: none;
+    background-color: lightgrey;
+    box-shadow: 1px 1px 2px whitesmoke;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: darkgrey;
+}
+
+button:active {
+    background-color: grey;
 }
 
 .formbutton {
@@ -62,15 +81,33 @@ button {
     box-shadow: 0px 0px 5px white;
     padding : 10px;
     background-color: black;
+    max-width: 1000px;
 }
 
-@media screen and (max-width: 1000px) {
-    header {
-    position: sticky;
-    top: 10px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-bottom: 10px;
-    }
+input {
+    background-color: black;
+    border: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid lightgrey;
+    color: whitesmoke;
+}
+
+.input-item {
+    margin: 5px;
+}
+
+input::placeholder {
+    color: lightgrey;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:invalid {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    caret-color: orangered;
+    border-bottom: 1px solid orangered;
 }
