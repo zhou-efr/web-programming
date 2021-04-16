@@ -121,9 +121,24 @@ input:invalid {
 }
 
 td {
-    margin: 1000px;
+    margin: 10px;
+    justify-content: center;
+    width : 30% ;
+    text-align : center;
+    padding : 5px;
+    border-top : 2px solid whitesmoke;
 }
 
-.listOfNameWhatALongIdForUHugo {
-    width: 100%;
+#listOfNameWhatALongIdForUHugo {
+    width: 50%;
+}
+
+.fatigue 
+{
+    background-color: darkgrey;
+    box-shadow: 1px 1px 2px darkgrey;
+}
+
+.pasDernier{
+    border-bottom: 10px solid white; 
 }
