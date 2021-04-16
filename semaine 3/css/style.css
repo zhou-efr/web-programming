@@ -31,6 +31,9 @@ body {
     width: 75%;
     margin-left: 12.5%;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 p {
@@ -133,12 +136,12 @@ td {
     width: 50%;
 }
 
-.fatigue 
+.fatigue
 {
     background-color: darkgrey;
     box-shadow: 1px 1px 2px darkgrey;
 }
 
 .pasDernier{
-    border-bottom: 10px solid white; 
+    border-bottom: 10px solid white;
 }
