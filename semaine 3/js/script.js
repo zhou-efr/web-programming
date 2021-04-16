@@ -15,6 +15,7 @@ let timer = () => {
         } else {
             document.getElementById("add").innerText = "add";
             anti_counter = timeout;
+            document.getElementById("add").classList.remove("fatigue");
             fillable = true;
         }
     }, 1000);
@@ -48,11 +49,16 @@ function handle_add() {
                 document.getElementById(i).value = "";
                 new_row.appendChild(td);
             }
-            let table = document.getElementById("listOfNameWhatALongIdForUHugo");
+            let table = document.getElementsByTagName("tbody")[0];
             table.appendChild(new_row);
             counter++;
+            let parent = document.getElementsByTagName("tbody")[0];
+            let children = parent.children; 
+            console.log(children[counter-1]);
+            children[counter-1].classList.add("pasDernier");
             // alert("PANDA");
             fillable = false;
+            document.getElementById("add").classList.remove("fatigue");
             console.log(anti_counter);
             timer();
         }
