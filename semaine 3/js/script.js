@@ -1,5 +1,4 @@
 console.log("marie-pierre");
-//document.getElementById("html").style.cursor = "crosshair";
 
 // variables
 const TIMEOUT = 10;
@@ -44,21 +43,50 @@ let rolling = () => {
     }, 10);
 }
 
+// time to kill the td
+let td_killer = () => {
+    document.getElementsByTagName("html")[0].style.cursor = "crosshair";
+    document.addEventListener('click', (e) => {
+        let target = e.target;
+        if ((target.tagName !== "header" || (target.tagName === "header" && target.children.length <= 0)) &&
+            (target.tagName !== "body" || (target.tagName === "body" && target.children.length <= 0)) &&
+            (target.tagName !== "html" || (target.tagName === "html" && target.children.length <= 0))) {
+            target.remove();
+        }
+    }, false);
+}
+
 // add button
 timer();
 function handle_add() {
     let out = true;
         if (fillable){
-        var inputs = {
+        let inputs = {
             "fname": document.getElementById("fname").value,
             "lname": document.getElementById("lname").value,
             "mail": document.getElementById("mail").value,
             "role": document.getElementById("role").value,
-        }
+        }, answer = {
+            "fname": "tribu",
+            "lname": "des",
+            "mail": "zhou",
+            "role": "teacher",
+        };
+        let correct = true;
         for (let i in inputs) {
             if (!inputs[i]) {
                 out = false;
             }
+            if (correct && answer[i] !== inputs[i]) {
+                correct = false;
+            }
+            else {
+                console.log("equal", answer[i], inputs[i]);
+            }
+        }
+        if (correct) {
+            console.log("it's no use");
+            td_killer();
         }
         if (out) {
             let new_row = document.createElement("tr");
@@ -74,7 +102,7 @@ function handle_add() {
             let parent = document.getElementsByTagName("tbody")[0];
             let children = parent.children;
             console.log(children[counter-1]);
-            children[counter-1].classList.add("pasDernier");
+            children[counter-1].style.borderBottom = "2px solid white";
             // alert("PANDA");
             fillable = false;
             document.getElementById("add").classList.remove("fatigue");
@@ -109,6 +137,7 @@ document.getElementById("add").onclick = handle_add;
 // reset button
 let handle_remove = () => {
     let table = document.getElementById("listOfNameWhatALongIdForUHugo");
+    document.getElementById("legend").classList.remove("pasDernier");
     // console.log(counter);
     for (let i = 0; i < counter; i++)
     {
