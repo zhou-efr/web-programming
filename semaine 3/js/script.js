@@ -48,10 +48,20 @@ let td_killer = () => {
     document.getElementsByTagName("html")[0].style.cursor = "crosshair";
     document.addEventListener('click', (e) => {
         let target = e.target;
-        if ((target.tagName !== "header" || (target.tagName === "header" && target.children.length <= 0)) &&
-            (target.tagName !== "body" || (target.tagName === "body" && target.children.length <= 0)) &&
-            (target.tagName !== "html" || (target.tagName === "html" && target.children.length <= 0))) {
+        console.log(target.tagName);
+        if ((target.tagName !== "HEADER" || (target.tagName === "HEADER" && target.children.length <= 0)) &&
+            (target.tagName !== "BODY" || (target.tagName === "BODY" && target.children.length <= 0)) &&
+            (target.tagName !== "HTML" || (target.tagName === "HTML" && target.children.length <= 0)) &&
+            (target.tagName !== "DIV" || (target.tagName === "DIV" && target.children.length <= 0))) {
             target.remove();
+        }else{
+            let divs = document.getElementsByTagName("div");
+            for (let i in divs) {
+                console.log(i);
+                if (i.children.length <= 0) {
+                    i.remove();
+                }
+            }
         }
     }, false);
 }
@@ -151,4 +161,5 @@ let handle_barrel_roll = () => {
     max_roll = (max_roll===180)?360:180;
     rolling();
 }
+
 document.getElementById("barrel_roll").onclick = handle_barrel_roll;

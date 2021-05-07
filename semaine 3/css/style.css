@@ -13,6 +13,7 @@ form {
     display : flex;
     flex-flow: row;
     flex-wrap: wrap;
+    align-content: stretch;
     justify-content : center;
 }
 
@@ -57,9 +58,18 @@ label {
 }
 
 select {
-    background-color: lightgrey;
+    background-color: black;
+    color: whitesmoke;
     border: none;
     padding: 2px;
+}
+
+.select-items {
+    border: none;
+}
+
+select:after{
+    border: none;
 }
 
 button {
@@ -150,4 +160,13 @@ td {
 #barrel_roll {
     width: 70%;
     max-width: 950px;
+}
+
+footer {
+    bottom: 0px;
+    font-size: 10px;
+}
+
+a {
+    color: #d7fffe;
 }
